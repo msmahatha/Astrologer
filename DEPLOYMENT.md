@@ -25,14 +25,20 @@
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
 
-5. **Set Environment Variables**
-   Click "Advanced" → "Add Environment Variable" and add:
+5. **Set Environment Variables** ⚠️ **CRITICAL STEP**
+   Click "Advanced" → "Add Environment Variable" and add these **REQUIRED** variables:
    
+   **CRITICAL (Must set):**
    ```
-   PYTHON_VERSION=3.11.8
    OPENAI_API_KEY=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
+   MY_API_KEY=supersecret@123A$trolzee
    CHROMADB_API_KEY=ck-8VaKLwMqsWQrxr7GYP6hNfsoUWvht7iPyr8f8aL4MSm8
    CHROMADB_TENANT=9d32821e-797a-4feb-ab2e-67a4d5a1af20
+   ```
+   
+   **Optional (have defaults):**
+   ```
+   PYTHON_VERSION=3.11.8
    CHROMADB_DB_NAME=Astrolozee
    COLLECTION_NAME=knowledge_base
    EMBED_MODEL=text-embedding-3-small
@@ -40,9 +46,10 @@
    TEMPERATURE=0.4
    MAX_TOKENS=800
    TOP_K=4
-   MY_API_KEY=supersecret@123A$trolzee
    LANGSMITH_TRACING=false
    ```
+   
+   ⚠️ **Note**: If OPENAI_API_KEY or MY_API_KEY are missing, the app will fail to start!
 
 6. **Select Plan**
    - Choose "Free" plan (or paid for better performance)
